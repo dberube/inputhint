@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jQuery Input Hint Plugin Demo</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.inputhint.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#form_1').inputHint('inputHint');
+});
+</script>
+<style type="text/css">
+.inputHint { color: #c1c1c1; }
+</style>
+</head>
+<body>
+<form id="form_1" name="form_1" method="get">
+	<p><input type="text" id="name" name="name" title="enter your name" /></p>
+	<p><input type="text" id="email" name="email" title="enter your email" /></p>
+    <p><input type="submit" value="Submit" /></p>
+</form>
+</body>
+</html>
