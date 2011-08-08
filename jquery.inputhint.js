@@ -1,12 +1,12 @@
 /*
  * Input Hint (for jQuery)
- * version: 0.9 (08/15/2010)
+ * version: 0.9.1 (08/08/2011)
  * @requires jQuery v1.2 or later
  *
  * Licensed under the MIT:
  *   http://www.opensource.org/licenses/mit-license.php
  *
- * Copyright 2010 David Berube [ berube@gmail.com ]
+ * Copyright 2011 David Berube [ berube@gmail.com ]
  *
  * Usage:
  *
@@ -18,7 +18,7 @@
  *
  */
 (function($) {
-	$.fn.inputHint = function(class) {
+	$.fn.inputHint = function(input_class) {
 		var form = $(this);
 		var win = $(window);
 		form.find('input').each(function() {
@@ -29,24 +29,24 @@
 			if (input.is(":text") && hint) {
 				input.focus(remove).blur(add);
 				if (value == '') {
-					input.addClass(class).val(hint);
+					input.addClass(input_class).val(hint);
 				}
 			}
 
 			function add() {
-				if (input.val() == '') { input.addClass(class).val(hint); }
+				if (input.val() == '') { input.addClass(input_class).val(hint); }
 			}
 			
 			function remove() {
-				if (input.val() == hint && input.hasClass(class)) { input.removeClass(class).val(''); }
+				if (input.val() == hint && input.hasClass(input_class)) { input.removeClass(input_class).val(''); }
 			}		
 		});
 		
 		function removeAll() {
 			form.find('input').each(function() {
 				
-				if ($(this).is(":text") && $(this).hasClass(class)) {
-					$(this).val('').removeClass(class);
+				if ($(this).is(":text") && $(this).hasClass(input_class)) {
+					$(this).val('').removeClass(input_class);
 				}
 			});
 		}
